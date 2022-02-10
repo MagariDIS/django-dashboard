@@ -1,0 +1,18 @@
+{
+    "name": "django-dashboard",
+    "mastertemplate": "boilerplate-code-django-dashboard",
+    "version": "0.0.2",
+    "private" : true,
+    "description": "Django demo app project - Django Material  ",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MagariDIS/django-dashboard"
+    },
+    "author": "T.Magari <t.magari@di-square.co.jp>",
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
