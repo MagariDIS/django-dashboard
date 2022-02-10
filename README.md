@@ -1,50 +1,36 @@
-# [Material Dashboard Django](https://www.creative-tim.com/product/material-dashboard-django) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Dashboard,%20a%20free%20Material%20Bootstrap%204%20Admin%20Template%20%E2%9D%A4%EF%B8%8F%20https%3A//bit.ly/2Lyat1Y%20%23bootstrap%20%23material%20%23design%20%23developers%20%23freebie%20%20via%20%40CreativeTim)
+# Django Dashboard Demo apps  [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)]()
 
- ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/material-dashboard-django/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/material-dashboard-django/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+ ![version](https://img.shields.io/badge/version-0.0.1-blue.svg)
 
 ![Material Dashboard Django - Admin Dashboard coded in Django.](https://github.com/creativetimofficial/material-dashboard-django/blob/master/media/material-dashboard-django-intro.gif)
 
 <br />
 
-> Free product - **Django Dashboard** starter project - Features:
+> Free product の **Django Dashboard** を自習用に変更しています
 
-- Up-to-date [dependencies](./requirements.txt): **Django 3.2.6 LTS**
+- [dependencies](./requirements.txt): **Django 3.2.6 LTS**
 - [SCSS compilation](#recompile-css) via **Gulp**
-- UI Kit: **Material Dashboard** (Free Version) provided by **[Creative-Tim](https://www.creative-tim.com/)**
-- Django Codebase - provided by **[AppSeed](https://appseed.us/)**
-- UI-Ready app, SQLite Database, Django Native ORM
-- Modular design, clean code-base
-- Session-Based Authentication, Forms validation
-- Deployment scripts: Docker, Gunicorn / Nginx
+- UI Kit: **Material Dashboard** (Free Version) を使用 provided by **[Creative-Tim](https://www.creative-tim.com/)**
+- SQLite Database
+- Docker-compose Base 
 
 <br />
 
 ## Table of Contents
 
-* [Demo](#demo)
 * [Quick Start](#quick-start)
 * [Documentation](#documentation)
 * [File Structure](#file-structure)
-* [Browser Support](#browser-support)
+* [Github](#GIT)
 * [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
 * [Useful Links](#useful-links)
 
 <br />
 
-## Demo
-
-> To authenticate use the default credentials ***test / ApS12_ZZs8*** or create a new user on the [registration page](https://creativetim-django-dashboard-black-pro.appseed.us/register/).
-
-- **Material Dashboard Django** [Login Page](https://www.creative-tim.com/live/material-dashboard-django)
-
-<br />
 
 ## Quick start
 
-> UNZIP the sources or clone the private repository. After getting the code, open a terminal and navigate to the working directory, with product source code.
+> mofficialのmaterial-dashboard-django.gitを編集していますので、正しくはオリジナルを参照してください
 
 ```bash
 $ # Get the code
@@ -75,23 +61,17 @@ $
 $ # Access the web app in browser: http://127.0.0.1:8000/
 ```
 
-```sh
-
-docker-compose run web python manage.py startapp chat
-docker-compose run appseed-app python manage.py migrate
-```
-
-> Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
-
 <br />
 
 ## Documentation
-The documentation for the **Material Dashboard Django** is hosted at our [website](https://demos.creative-tim.com/material-dashboard-django/docs/1.0/getting-started/getting-started-django.html).
+ **Material Dashboard Django** のドキュメントは [website](https://demos.creative-tim.com/material-dashboard-django/docs/1.0/getting-started/getting-started-django.html)を参照ください。
+
+
 
 <br />
 
 ## File Structure
-Within the download you'll find the following directories and files:
+
 
 ```bash
 < PROJECT ROOT >
@@ -145,21 +125,6 @@ Within the download you'll find the following directories and files:
 
 <br />
 
-> The bootstrap flow
-
-- Django bootstrapper `manage.py` uses `core/settings.py` as the main configuration file
-- `core/settings.py` loads the app magic from `.env` file
-- Redirect the guest users to Login page
-- Unlock the pages served by *app* node for authenticated users
-
-
-docker-compose down --rmi all --volumes --remove-orphans
-
-docker ps -a
-docker image prune
-
-<br />
-
 ## Recompile CSS
 
 To recompile SCSS files, follow this setup:
@@ -203,14 +168,22 @@ The generated file is saved in `static/assets/css` directory.
 
 <br /> 
 
-## Deployment
-
-The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
-
-### [Docker](https://www.docker.com/) execution
 ---
 
-The application can be easily executed in a docker container. The steps:
+## Deployment
+
+### [Docker](https://www.docker.com/) execution
+
+> Note: ローカルにpython環境を作らず WLS2上のdocker-composeで開発しています 
+
+```sh
+
+docker-compose run appseed-app python manage.py startapp chat
+docker-compose run appseed-app python manage.py migrate
+```
+
+
+The steps:
 
 > Get the code
 
@@ -229,7 +202,21 @@ Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
+
 ## Mange command:
+
+
+> 不要なdocker imageの整理
+
+```sh
+docker-compose down --rmi all --volumes --remove-orphans
+
+docker ps -a
+docker image prune
+```
+
+<br />
+
 
 ```
 Type 'manage.py help <subcommand>' for help on a specific subcommand.
@@ -282,23 +269,18 @@ Available subcommands:
 
 GMAP API: AIzaSyAKWigPZLVTsdMGT3G34CirjBLcQ-mnf7c
 
+## WLS2 仮想ディスクの圧縮方法
 
 ```
-PS C:\WINDOWS\system32> cd C:\Users\magai\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\
+PS C:\WINDOWS\system32> cd ${HOME}\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\
 
-ディレクトリ: C:\Users\magai\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
+ディレクトリ: ${HOME}\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
 Name
 2022/02/08     17:55     9616490496 ext4.vhdx
 
 Optimize-VHD -Path .\ext4.vhdx -Mode full  
 ```
-
-- Demo: <https://www.creative-tim.com/live/material-dashboard-django>
-- Download Page: <https://www.creative-tim.com/product/material-dashboard-django>
 - Documentation: <https://demos.creative-tim.com/material-dashboard-django/docs/1.0/getting-started/getting-started-django.html>
-- License Agreement: <https://www.creative-tim.com/license>
-- Support: <https://www.creative-tim.com/contact-us>
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard-django/issues)
 
 <br />
 
@@ -313,10 +295,122 @@ Optimize-VHD -Path .\ext4.vhdx -Mode full
 
 <br />
 
-## Technical Support or Questions
+# Git[](https://tutorial.django-dashboard.org/ja/deploy/#git)
 
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
+## Gitリポジトリを始める
 
+Gitはコードリポジトリ（または略して「リポジトリ」）というものの中に置かれる特定のファイルへの変更を追跡します。 私たちのプロジェクトを開始しましょう。 あなたのコンソールを開き、`django-dashboard` ディレクトリでこれらのコマンドを実行します。
+
+> **備考：**リポジトリを初期化する前に `pwd` (OSX/Linux) または `cd` (Windows) コマンドで現在の作業ディレクトリを確認してください。 `django-dashboard` フォルダー内にいる必要があります。
+
+command-line
+
+```
+$ git init
+Initialized empty Git repository in ~/django-dashboard/.git/
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+```
+
+gitリポジトリを初期化することは、プロジェクトごとに1回だけ行う必要があります（ユーザー名と電子メールをもう一度入力する必要はありません）。
+
+Git はこのディレクトリ内のすべてのファイルとフォルダの変更を追跡しますが、無視してほしいいくつかのファイルがあります。 ベースディレクトリ内で `.gitignore` という名前のファイルを作成することによってこれを行います。 あなたのエディターを開き、次の内容で新しいファイルを作成します。
+
+.gitignore
+
+```
+*.pyc
+*~
+/.vscode
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+```
+
+これを "django-dashboard" フォルダ内に `.gitignore` という名前で保存します。
+
+> **備考：**ファイル名の先頭のドットは重要です! もしそのファイルを作るのが難しいなら、（Macをお使いの方はFinderからドット（ . ）で始まるファイルを作れません。）そういう時はエディタでSave Asから作成すれば問題ありません。 `.txt`や `.py`などの拡張子をファイル名に入れないように気をつけてください。 ファイル名が`.gitignore`でないとGitに認識されません。
+> 
+> **備考：** `.gitignore`ファイルで指定したファイルの1つが`db.sqlite3`です。 そのファイルはローカルデータベースで、すべてのユーザーと投稿が保存されます。 私達は標準的なウェブプログラミングの慣習に従います。つまり、ローカルのテストサイトとPythonAnywhere上の本番のウェブサイトでデータベースを分けるということです。 PythonAnywhereのデータベースは開発用のマシンと同じようにSQLiteにすることができますが、通常はMySQLというSQLiteよりもたくさんのサイト訪問者に対処できるデータベースを使用します。 どちらの方法でも、GitHubのコードのコピーではSQLiteデータベースを無視することで、これまでに作成したすべての投稿と管理者はそのままローカルで利用できますが、本番環境（ブログを公開するPythonAnywhereのことです）ではそれらを再び作成する必要があります。 ローカルデータベースは本当のブログ投稿をブログから削除してしまうことを心配せずに、さまざまなことをテストできるよい遊び場として考えるといいでしょう。
+
+`git add` コマンドを実行する前や、どのような変更を加えたか定かでない時は、 `git status` コマンドを使用する事をおすすめします。 これは間違ったファイルを追加またはコミットなど思いもかけない事を止めるために役立ちます。 `git status` コマンドは、あらゆる追跡されていない/変更されている/ステージされている（untracked/modifed/staged）ファイルや、ブランチの状態などさまざまな情報を返します。 出力は次のようになります。
+
+command-line
+
+```
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        blog/
+        manage.py
+        mysite/
+        requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+最後に、変更内容を保存します。コンソールに移動し、これらのコマンドを実行します。
+
+command-line
+
+```
+$ git add --all .
+$ git commit -m "My Django Girls app, first commit"
+ [...]
+ 13 files changed, 200 insertions(+)
+ create mode 100644 .gitignore
+ [...]
+ create mode 100644 mysite/wsgi.py
+```
+
+## GitHubにコードをプッシュする[](https://tutorial.django-dashboard.org/ja/deploy/#github%E3%81%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E3%83%97%E3%83%83%E3%82%B7%E3%83%A5%E3%81%99%E3%82%8B)
+
+[GitHub.com](https://www.github.com/)にアクセスし、Sign upをクリックして無料の新規アカウントを作成してください。 （ワークショップの前にすでに作成していたら、それは素晴らしいです!） あなたのパスワードを忘れないようにしてください（使っていたら、パスワードマネージャーに入れておいてください）
+
+そして、新しいリポジトリに "django-dashboard"の名前で新しいリポジトリを作成します。 "READMEで初期化する"チェックボックスをオフのままにし、.gitignoreオプションを空白にして（手動で行っています）、ライセンスをNoneのままにしておきます。
+
+![](images/new_github_repo.png)
+
+> **注** `django-dashboard`という名前は重要です。何か他のものを選択することもできますが、以下の手順では何度も繰り返す必要があります。他の名前を選択した場合は、 毎回それを置き換えてください。 できれば、`django-dashboard` の名前にしておきましょう。
+
+次の画面では、リポジトリをクローンするためのURLが表示されます。これはこの後のコマンドで利用します。
+
+![](images/github_get_repo_url_screenshot.png)
+
+そして自分のコンピューター上のGitリポジトリをGitHub上のGitリポジトリに結びつけてあげる必要があります。
+
+コンソールに次のように入力します（`<your-github-username>`をGitHubアカウントの作成時に入力したユーザー名に置き換えます。山カッコ<>を残さないでください。このURLはさっき見たクローンURLと一致する必要があります）。
+
+command-line
+
+```
+$ git remote add origin https://github.com/<your-github-username>/django-dashboard.git
+$ git push -u origin master
+```
+
+GitHubにプッシュするとき、GitHubのユーザー名とパスワードを聞かれます（コマンドライン上かポップアップウィンドウにて）。認証情報を入力したらこんな風に表示されます。
+
+command-line
+
+```
+Counting objects: 6, done.
+Writing objects: 100% (6/6), 200 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+
+To https://github.com/ola/django-dashboard.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
+あなたのコードは今GitHub上にあります。 
 <br />
 
 ## Useful Links
